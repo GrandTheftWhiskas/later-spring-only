@@ -32,4 +32,9 @@ public class ItemController {
         return itemService.getAll(userId);
     }
 
+    @GetMapping("/search")
+    public List<Item> search(@RequestParam String text) {
+        return itemService.search(text);
+    }
+
 }
