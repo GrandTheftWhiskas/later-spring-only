@@ -1,7 +1,5 @@
 package ru.practicum.user;
 
-import lombok.Getter;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;

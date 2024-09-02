@@ -2,11 +2,10 @@ package ru.practicum.item;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.practicum.exception.BadRequestException;
 import ru.practicum.exception.NotFoundException;
-import ru.practicum.exception.ValidationException;
 import ru.practicum.user.UserRepositoryImpl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -42,5 +41,12 @@ public class ItemService {
 
     public List<Item> getAll(Long userId) {
         return itemRepository.getAll(userId);
+    }
+
+    public List<Item> search(String text) {
+        if (text == null || text.isEmpty() || text.isBlank()) {
+            return new ArrayList<>();
+        }
+        return itemRepository.search(text);
     }
 }
